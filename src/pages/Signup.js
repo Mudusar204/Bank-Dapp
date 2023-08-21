@@ -15,7 +15,8 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-500">
+     <>
+    {window.ethereum?<div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-500">
       <p className="mb-6 text-[60px] text-gray-800 font-bold">Bank DApp</p>
 
       <div className="bg-white p-10 rounded-lg shadow-md">
@@ -83,7 +84,8 @@ const Signup = () => {
           </button>
         </form>
       </div>
-    </div>
+      </div>:<p className="flex justify-center items-center h-screen text-[40px] font-medium"> Plx Install MetaMask Firstly</p>}
+    </>
   );
 };
 

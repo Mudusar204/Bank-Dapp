@@ -18,8 +18,9 @@ const {login}=useLogin()
  
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-500">
-      <p className="mb-6 text-[60px] text-gray-800 font-bold">Bank DApp</p>
+    <>
+    {window.ethereum?<div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-500">
+     <p className="mb-6 text-[60px] text-gray-800 font-bold">Bank DApp</p>
       <div className="bg-white p-10 rounded-lg shadow-md">
         <h2 className="text-3xl font-semibold text-center mb-6">Login</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -76,7 +77,9 @@ const {login}=useLogin()
           </Link>
         </p>
       </div>
-    </div>
+    </div>:<p className="flex justify-center items-center h-screen text-[40px] font-medium"> Plx Install MetaMask Firstly</p>}
+    </>
+
   );
 };
 

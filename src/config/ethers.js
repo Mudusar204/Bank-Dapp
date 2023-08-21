@@ -1,8 +1,9 @@
 import { ethers } from "ethers";
 export const provider = new ethers.providers.JsonRpcProvider(`HTTP://127.0.0.1:7545`);
 ///////////////////////////////contract's address/////////////////////////////////
-export const AuthContractAddress = "0xEC877aE1E5bDB9B5BFCcF983e05D2AADB6C6848B";
-export const TransferAmountAddress = "0xE38e6e0c2A5c7A4f93c9180DD2E81796b2D8dABb";
+export const AuthContractAddress = "0xa7CC28398102de6293a1e0E989409cc548F9B549";
+export const TransferAmountAddress = "0x037DBbcB51d81519B8c90c286e1c33303b124A2B";
+export const DepositAmountAddress = "0xe23cDFa25f9F08975dD1E63274b93fcE172c8C15";
 ///////////////////////////////contract's ABI/////////////////////////////////
 
 export const AuthContractABI = [
@@ -222,6 +223,188 @@ export const TransferAmountABI= [
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  }
+]
+
+export const DepositAmountABI=[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "balance",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "checkAccountBalance",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "contractBalance",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "depositAmount",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "getTransactionHistory",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "from",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "to",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "nonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "gasfee",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct TransferAmount.TransactionDetail[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address payable",
+        "name": "receiverAccount",
+        "type": "address"
+      }
+    ],
+    "name": "payToOtherAccount",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "transactionHistory",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "nonce",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "gasfee",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "withdrawAmount",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   }
 ]
