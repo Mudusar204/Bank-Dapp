@@ -1,9 +1,12 @@
 import { ethers } from "ethers";
-export const provider = new ethers.providers.JsonRpcProvider(`HTTP://127.0.0.1:7545`);
+// export const provider = new ethers.providers.JsonRpcProvider(`HTTP://127.0.0.1:7545`);
+export const provider = new ethers.providers.JsonRpcProvider(`https://sepolia.infura.io/v3/26865b57594148a68791dfbc1dacde47`);
 ///////////////////////////////contract's address/////////////////////////////////
 export const AuthContractAddress = "0xa7CC28398102de6293a1e0E989409cc548F9B549";
-export const TransferAmountAddress = "0x037DBbcB51d81519B8c90c286e1c33303b124A2B";
-export const DepositAmountAddress = "0xe23cDFa25f9F08975dD1E63274b93fcE172c8C15";
+// export const TransferAmountAddress = "0x037DBbcB51d81519B8c90c286e1c33303b124A2B";
+// export const DepositAmountAddress = "0xe23cDFa25f9F08975dD1E63274b93fcE172c8C15";
+export const TransferAmountAddress = "0xdC410B47f671f94D68692E33d0eCCBFA5ADCff57";
+export const DepositAmountAddress = "0xD1C98A9F67EeD2579288e477775FAcDb92154d79";
 ///////////////////////////////contract's ABI/////////////////////////////////
 
 export const AuthContractABI = [

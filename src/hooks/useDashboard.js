@@ -136,26 +136,29 @@ const useDashboard = () => {
   };
   const contractBalance = async () => {
     try {
+      console.log(activeAccount,'active account');
+
       const balance = await DepositAmountContract.contractBalance();
       const contractBalance = ethers.utils.formatEther(balance);
       console.log(contractBalance);
       setContractBalance(contractBalance)
-      return contractBalance;
+      // return contractBalance;
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   };
   const accountBalance = async () => {
     try {
+      console.log(activeAccount,'active account');
       const balance = await DepositAmountContract.checkAccountBalance(
         activeAccount
       );
       const accountBalance = ethers.utils.formatEther(balance);
       console.log(accountBalance);
       setAccountBalance(accountBalance)
-      return accountBalance;
+      // return accountBalance;
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   };
   const transectionHistory = async () => {
