@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
+import Token from "./pages/Token";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
             <Route path="/" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/token" element={<Token/>}/>
           </Routes>
         </BrowserRouter>
       </Provider>

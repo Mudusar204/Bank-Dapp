@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   provider,
   AuthContractAddress,
-  AuthContractABI,
+  AuthContractABI, 
   TransferAmountAddress,
   TransferAmountABI,
   DepositAmountAddress,
